@@ -1,0 +1,22 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3921
+
+This plugin updates the 'Last Changed' line in a file. This can be done
+automatically if g:TagmaLastAutoUpdate is set. The pattern to search for and
+the timestamp format can be set. When making the update :updatejoin can be
+used to join the change to the previous change. This allows :undo to undo
+both changes. This is controlled by g:TagmaLastUseUndoJoin.
+
+The 'Last Changed' line is matched by a regexp set in
+g:TagmaLastSearchRegexp. This allows any desired format to be matched.
+
+The command UpdateLast manually updates the 'Last Changed' line.
+This is mapped to <Leader>UL by default. (<Leader> is normally "\")
+
+The commands TagmaLastDisable and TagmaLastEnable disable and
+enable automatic updates of the 'Last Changed' line, respectively.
+
+The timestamp that is used is set by g:TagmaLastTimeFormat.
+Defaults to "%a %b %d %I:00 %p %Y %Z".
+On Windows "%Z" for the time zone defaults to the full name, not the
+three letter abbreviation. This is detected and corrected resulting in
+time zones always being the three letter abbreviation.

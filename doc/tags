@@ -1,0 +1,17 @@
+TagmaLast	TagmaLast.txt	/*TagmaLast*
+TagmaLast-commands	TagmaLast.txt	/*TagmaLast-commands*
+TagmaLast-description	TagmaLast.txt	/*TagmaLast-description*
+TagmaLast-installation	TagmaLast.txt	/*TagmaLast-installation*
+TagmaLast-mappings	TagmaLast.txt	/*TagmaLast-mappings*
+TagmaLast-settings	TagmaLast.txt	/*TagmaLast-settings*
+TagmaLast-usage	TagmaLast.txt	/*TagmaLast-usage*
+TagmaLast.txt	TagmaLast.txt	/*TagmaLast.txt*
+TagmaLastDisable	TagmaLast.txt	/*TagmaLastDisable*
+TagmaLastEnable	TagmaLast.txt	/*TagmaLastEnable*
+UpdateLast	TagmaLast.txt	/*UpdateLast*
+g:TagmaLastAutoUpdate	TagmaLast.txt	/*g:TagmaLastAutoUpdate*
+g:TagmaLastCheckLines	TagmaLast.txt	/*g:TagmaLastCheckLines*
+g:TagmaLastKeyMap	TagmaLast.txt	/*g:TagmaLastKeyMap*
+g:TagmaLastSearchRegexp	TagmaLast.txt	/*g:TagmaLastSearchRegexp*
+g:TagmaLastTimeFormat	TagmaLast.txt	/*g:TagmaLastTimeFormat*
+g:TagmaLastUseUndoJoin	TagmaLast.txt	/*g:TagmaLastUseUndoJoin*

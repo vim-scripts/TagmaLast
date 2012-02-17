@@ -1,0 +1,124 @@
+*TagmaLast.txt* Update the 'Last Changed' line in a file.
+			     For Vim version 7.x.
+		  Last Changed: Fri Feb 03 12:00 PM 2012 EST
+		    https://github.com/LStinson/TagmaLast
+		       By Lorance Stinson AT Gmail ...
+
+Contents:					*TagmaLast*
+	Description				|TagmaLast-description|
+	Installation				|TagmaLast-installation|
+	Usage					|TagmaLast-usage|
+	Commands				|TagmaLast-commands|
+	Key Mappings				|TagmaLast-mappings|
+	Settings				|TagmaLast-settings|
+
+
+==============================================================================
+DESCRIPTION					*TagmaLast-description*
+
+This plugin updates the 'Last Changed' line in a file. This can be done
+automatically if g:TagmaLastAutoUpdate is set. The pattern to search for and
+the timestamp format can be set. When making the update |:updatejoin| can be
+used to join the change to the previous change. This allows |:undo| to undo
+both changes. This is controlled by g:TagmaLastUseUndoJoin.
+
+The 'Last Changed' line is matched by a regexp set in
+|g:TagmaLastSearchRegexp|. This allows any desired format to be matched.
+
+==============================================================================
+INSTALLATION					*TagmaLast-installation*
+
+Copy the files to your ~/.vim or ~/vimfiles directory.
+If using a package manager like pathogen place the whole directory in the
+bundle directory.
+ 
+==============================================================================
+USAGE						*TagmaLast-usage*
+
+The 'Last Changed' line can be updated manually using the |UpdateLast| command
+or the key sequence defined by |g:TagmaLastKeyMap| (defauls to "<Leader>UL").
+
+The update can be performed automatically on write if the setting
+|g:TagmaLastAutoUpdate| is enabled.
+
+==============================================================================
+COMMANDS					*TagmaLast-commands*
+
+Commands for updating the 'Last Changed' line and controlling automatic
+updates on write.
+
+:UpdateLast					*UpdateLast*
+	Update the 'Last Changed' line.
+
+:TagmaLastDisable				*TagmaLastDisable*
+	Disable autoupdate of the 'Last Changed' line.
+
+:TagmaLastEnable				*TagmaLastEnable*
+	Enable autoupdate of the 'Last Changed' line.
+
+==============================================================================
+MAPPINGS					*TagmaLast-mappings*
+
+There is one key mapping to manually update the 'Last Changed' line.
+
+Note:	The |Leader| key is normally set to "\".
+
+<Leader>UL					<Plug>OpenMgr
+	Update the 'Last Changed' line. >
+		map <silent> <Leader>UL <Plug>UpdateLast
+<
+
+==============================================================================
+SETTINGS					*TagmaLast-settings*
+
+*g:TagmaLastAutoUpdate*
+	Automatically update  the 'Last Changed' line on writes.
+	Defaults to 0. Set to 1 to enable. >
+		let g:TagmaLastAutoUpdate = 1
+<
+
+*g:TagmaLastCheckLines*
+	The number of lines at the top of the file to check for the 'Last
+	Changed' line. Only the first matching line is updated should multiple
+	lines match.
+	Defaults to 20. >
+		let g:TagmaLastCheckLines = 20
+<
+
+*g:TagmaLastKeyMap*
+	The keymap for manual updates of the 'Last Changed' line.
+	If set to an empty string the key map is not created.
+	If a key map for "<Plug>OpenMgr" already exists this is ignored and
+	treated as if set to an empty string.
+	Defaults to "<Leader>UL". Set to "" to disable. >
+		let g:TagmaLastCheckLines = '<Leader>UL'
+<
+
+*g:TagmaLastTimeFormat*
+	The time/date format for the 'Last Changed' line.
+	See |strftime()| for details.
+	On Windows "%Z" for the time zone defaults to the full name, not the
+	three letter abbreviation. This is detected and corrected resulting in
+	time zones always being the three letter abbreviation.
+	Defaults to "%a %b %d %I:00 %p %Y %Z". >
+		let g:TagmaLastTimeFormat = '%a %b %d %I:00 %p %Y %Z'
+<
+
+*g:TagmaLastSearchRegexp*
+	The regexp used to match the 'Last Changed' line.
+	The contents of the regexp are preserved.
+	Any text after the regexp is replaced with the new timestamp.
+	Defaults to "Last\s\+\%(Changed\|Modified\):\s\+". >
+		let g:TagmaLastSearchRegexp = 'Last\s\+\%(Changed\|Modified\):\s\+'
+<
+
+*g:TagmaLastUseUndoJoin*
+	If enabled |:undojoin| is used to join the change to the 'Last
+	Changed' line to the previous change. This means |:undo| will undo
+	both changes. The intent is to make the change to the 'Last Changed'
+	line more transparent.
+	Defaults to 0. Set to 1 to enable. >
+		let g:TagmaLastUseUndoJoin = 1
+<
+
+ vim:ts=8 sw=8 sts=8 noet tw=78 ft=help:
